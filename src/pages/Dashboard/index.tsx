@@ -9,10 +9,9 @@ const Dashboard: React.FC<any> = ({}) => {
   const [customer, setCustomer] = useState('');
 
   const featchData = async () => {
-    console.log('fetching data');
     try {
       const response = await axios.get(
-        `http://ec2-34-229-217-14.compute-1.amazonaws.com:8001/invoice/dashboard/${customer}`,
+        `https://api-lumi.brasgran.com.br/invoice/dashboard/${customer}`,
       );
       setInvoices(response.data);
       message.info('Invoices fetched successfully');

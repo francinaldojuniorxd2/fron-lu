@@ -13,9 +13,7 @@ const SelectCustomer: React.FC<SelectCustomerProps> = ({ onChange }) => {
   const fetchCustomers = async (value: string) => {
     console.log('fetching customers', value);
     try {
-      const response = await axios.get(
-        `http://ec2-34-229-217-14.compute-1.amazonaws.com:8001/invoice/${value}`,
-      );
+      const response = await axios.get(`https://api-lumi.brasgran.com.br/invoice/${value}`);
       setCustomers(response.data);
     } catch (error) {
       console.error('Error fetching customers:', error);

@@ -16,7 +16,7 @@ const Invoices = () => {
     startLoading();
     try {
       const response = await axios.get(
-        `http://ec2-34-229-217-14.compute-1.amazonaws.com:8001/invoice/files/${customer}`,
+        `https://api-lumi.brasgran.com.br/invoice/files/${customer}`,
       );
       setInvoices(response.data);
       stopLoading();
@@ -29,7 +29,7 @@ const Invoices = () => {
 
   const props: UploadProps = {
     name: 'file',
-    action: 'http://ec2-34-229-217-14.compute-1.amazonaws.com:8001/upload',
+    action: 'https://api-lumi.brasgran.com.br/upload',
     headers: {
       authorization: 'authorization-text',
     },
@@ -70,7 +70,7 @@ const Invoices = () => {
         return (
           <a
             key={record.id}
-            href={`http://localhost:8001/files/${record?.file?.name}`}
+            href={`https://api-lumi.brasgran.com.br/files/${record?.file?.name}`}
             download
             target="_"
           >
